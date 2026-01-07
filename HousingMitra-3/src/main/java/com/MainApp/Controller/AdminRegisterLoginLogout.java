@@ -26,7 +26,7 @@ public class AdminRegisterLoginLogout {
 	@Autowired
 	UserService uService;
 	
-	// ================= EXISTING METHODS =================
+	//  EXISTING METHODS 
 	
 	@RequestMapping("/Signup")
 	public String showSignup() {
@@ -81,7 +81,7 @@ public class AdminRegisterLoginLogout {
 		return "redirect:/Login";
 	}
 	
-	// ================= MANAGE MEMBERS =================
+	//MANAGE MEMBERS 
 	
 	@RequestMapping("/manage-members")
 	public String manageMembers(Model model, HttpServletRequest req) {
@@ -97,7 +97,7 @@ public class AdminRegisterLoginLogout {
 	    return "ManageMembers"; // JSP page
 	}
 	
-	// ================= ADD USER =================
+	// ADD USER 
 	@RequestMapping("/add-user")
 	public String addUser(@ModelAttribute User u, HttpServletRequest req) {
 	    HttpSession s = req.getSession();
@@ -106,7 +106,7 @@ public class AdminRegisterLoginLogout {
 	    return "redirect:/manage-members";
 	}
 	
-	// ================= EDIT USER =================
+	// EDIT USER 
 	@RequestMapping("/edit-user")
 	public String editUser(@ModelAttribute User u, HttpServletRequest req) {
 	    HttpSession s = req.getSession();
@@ -115,7 +115,7 @@ public class AdminRegisterLoginLogout {
 	    return "redirect:/manage-members";
 	}
 	
-	// ================= DELETE USER =================
+	//  DELETE USER
 	@RequestMapping("/delete-user")
 	public String deleteUser(@RequestParam("userId") long userId, HttpServletRequest req) {
 	    HttpSession s = req.getSession();
