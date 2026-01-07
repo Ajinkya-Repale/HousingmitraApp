@@ -115,7 +115,7 @@ public class AdminRegisterLoginLogout {
 	    return "redirect:/manage-members";
 	}
 	
-	//  DELETE USER(Admin Side)
+	//  DELETE USER (Admin Side)
 	@RequestMapping("/delete-user")
 	public String deleteUser(@RequestParam("userId") long userId, HttpServletRequest req) {
 	    HttpSession s = req.getSession();
