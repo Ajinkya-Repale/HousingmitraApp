@@ -26,7 +26,7 @@ Post and manage Notices for users
 
 Track Expenses and monthly statistics
 
-
+<br><br>
 
 
 
@@ -48,7 +48,7 @@ View Payments Due and maintain payment history
 Interactive chatbot for support and queries
 
 
-
+<br><br>
 
 
 **Technology Stack**
