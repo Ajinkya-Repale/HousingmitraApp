@@ -69,28 +69,52 @@ The system enhances communication between residents and management while providi
 ****
 
 ```
-/src
-   /com/MainApp/Entity
-       Complaint.java
-       Request.java
-       Notice.java
-   /com/MainApp/Servlets
-       LoginServlet.java
-       AdminServlets.java
-       UserServlets.java
-/webapp
-   admin-home.jsp
-   user-home.jsp
-   user-requests.jsp
-   user-complaints.jsp
-   user-notice.jsp
-   Login.jsp
-   /css
-       style.css
-   /js
-       scripts.js
-/WEB-INF
-   web.xml
+HousingMitra-3/
+├── .mvn/
+│   └── wrapper/
+│
+├── src/
+│   ├── main/
+│   │   ├── java/
+│   │   │   └── com/
+│   │   │       └── MainApp/
+│   │   │           ├── Controller/
+│   │   │           │   └── (controller classes)
+│   │   │           ├── Entity/
+│   │   │           │   └── (entity/model classes)
+│   │   │           ├── Repository/
+│   │   │           │   └── (repository/DAO classes)
+│   │   │           ├── Service/
+│   │   │           │   └── (service classes)
+│   │   │           ├── HousingMitra3Application.java
+│   │   │           └── ServletInitializer.java
+│   │   │
+│   │   ├── resources/
+│   │   │   └── (configuration files)
+│   │   │
+│   │   └── webapp/
+│   │       ├── Image/
+│   │       ├── Index.jsp
+│   │       ├── Login.jsp
+│   │       ├── Signup.jsp
+│   │       ├── ManageMembers.jsp
+│   │       ├── Notice.jsp
+│   │       ├── Request.jsp
+│   │       ├── adminhome.jsp
+│   │       ├── admin-complaints.jsp
+│   │       ├── user-complaints.jsp
+│   │       └── user-notice.jsp
+│   │
+│   └── test/
+│       └── java/
+│           └── com/
+│               └── MainApp/
+│
+├── .gitattributes
+├── .gitignore
+├── mvnw
+├── mvnw.cmd
+└── pom.xml
 ```
 
 <br><br>
