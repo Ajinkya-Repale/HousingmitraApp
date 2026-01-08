@@ -79,21 +79,43 @@ HousingMitra-3/
 │   │   │   └── com/
 │   │   │       └── MainApp/
 │   │   │           ├── Controller/
-│   │   │           │   └── (controller classes)
+│   │   │           │   ├── AdminRegisterLoginLogout.java
+│   │   │           │   ├── ComplaintController.java
+│   │   │           │   ├── IndexController.java
+│   │   │           │   ├── NoticeCreateUpdateDelete.java
+│   │   │           │   ├── RequestController.java
+│   │   │           │   └── UserRegisterLoginLogout.java
+│   │   │           │
 │   │   │           ├── Entity/
-│   │   │           │   └── (entity/model classes)
+│   │   │           │   ├── Admin.java
+│   │   │           │   ├── Complaint.java
+│   │   │           │   ├── Notice.java
+│   │   │           │   ├── Request.java
+│   │   │           │   └── User.java
+│   │   │           │
 │   │   │           ├── Repository/
-│   │   │           │   └── (repository/DAO classes)
+│   │   │           │   ├── AdminRepository.java
+│   │   │           │   ├── ComplaintRepository.java
+│   │   │           │   ├── NoticeRepository.java
+│   │   │           │   ├── RequestRepository.java
+│   │   │           │   └── UserRepository.java
+│   │   │           │
 │   │   │           ├── Service/
-│   │   │           │   └── (service classes)
+│   │   │           │   ├── AdminService.java
+│   │   │           │   ├── ComplaintService.java
+│   │   │           │   ├── NoticeService.java
+│   │   │           │   ├── RequestService.java
+│   │   │           │   └── UserService.java
+│   │   │           │
 │   │   │           ├── HousingMitra3Application.java
 │   │   │           └── ServletInitializer.java
 │   │   │
 │   │   ├── resources/
-│   │   │   └── (configuration files)
+│   │   │   └── (application.properties / config files)
 │   │   │
 │   │   └── webapp/
 │   │       ├── Image/
+│   │       │   └── (images & static assets)
 │   │       ├── Index.jsp
 │   │       ├── Login.jsp
 │   │       ├── Signup.jsp
@@ -102,8 +124,10 @@ HousingMitra-3/
 │   │       ├── Request.jsp
 │   │       ├── adminhome.jsp
 │   │       ├── admin-complaints.jsp
+│   │       ├── userhome.jsp
 │   │       ├── user-complaints.jsp
-│   │       └── user-notice.jsp
+│   │       ├── user-notices.jsp
+│   │       └── user-request.jsp
 │   │
 │   └── test/
 │       └── java/
