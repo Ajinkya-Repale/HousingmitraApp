@@ -13,19 +13,19 @@ The system enhances communication between residents and management while providi
 <br><br>
 ###**Admin Features**
 
-Secure Admin login and dashboard overview
+-Secure Admin login and dashboard overview
 
-**Manage Users**: tenants, owners, and their roles
+-**Manage Users**: tenants, owners, and their roles
 
-**Handle Properties**: add, edit, and view property listings
+-**Handle Properties**: add, edit, and view property listings
 
-Approve or reject Requests (maintenance, booking, permissions)
+-Approve or reject Requests (maintenance, booking, permissions)
 
-Manage Complaints submitted by residents
+-Manage Complaints submitted by residents
 
-Post and manage Notices for users
+-Post and manage Notices for users
 
-Track Expenses and monthly statistics
+-Track Expenses and monthly statistics
 
 <br><br>
 
@@ -34,19 +34,19 @@ Track Expenses and monthly statistics
 
 ##**User Features**
 
-Secure User login and personalized dashboard
+-Secure User login and personalized dashboard
 
-View and manage booked properties
+-View and manage booked properties
 
-Submit Requests and track their status (Pending/Accepted/Rejected)
+-Submit Requests and track their status (Pending/Accepted/Rejected)
 
-Submit and track Complaints
+-Submit and track Complaints
 
-View Notices posted by management
+-View Notices posted by management
 
-View Payments Due and maintain payment history
+-View Payments Due and maintain payment history
 
-Interactive chatbot for support and queries
+-Interactive chatbot for support and queries
 
 
 <br><br>
