@@ -25,6 +25,9 @@ Track Expenses and monthly statistics
 
 
 
+
+
+
 **User Features**
 
 Secure User login and personalized dashboard
@@ -42,13 +45,65 @@ View Payments Due and maintain payment history
 Interactive chatbot for support and queries
 
 
+
+
+
 **Technology Stack**
 
-**Layer**         ** Technology**
+| Layer    | Technology                            |
+| -------- | ------------------------------------- |
+| Backend  | **Spring Boot (Java)**                |
+| Frontend | JSP, HTML, CSS, JavaScript            |
+| Database | MySQL/PostgreSQL                      |
+| ORM      | Spring Data JPA / Hibernate           |
+| Server   | Embedded **Tomcat** (via Spring Boot) |
+| Styling  | Responsive CSS (Grid & Flexbox)       |
 
-**Frontend**       **JSP, HTML, CSS, JavaScript**
-**Backend**          **Spring Boot (Java)**
-**Database**          ** MySQL/PostgreSQL**
-**ORM**	              **Spring Data JPA / Hibernate**
-**Server**	       **Embedded Tomcat (via Spring Boot)**
-**Styling**	         **  Responsive CSS (Grid & Flexbox)**
+
+
+****Project Structure
+****
+
+/src
+   /com/MainApp/Entity
+       Complaint.java
+       Request.java
+       Notice.java
+   /com/MainApp/Servlets
+       LoginServlet.java
+       AdminServlets.java
+       UserServlets.java
+/webapp
+   admin-home.jsp
+   user-home.jsp
+   user-requests.jsp
+   user-complaints.jsp
+   user-notice.jsp
+   Login.jsp
+   /css
+       style.css
+   /js
+       scripts.js
+/WEB-INF
+   web.xml
+
+
+
+**Future Enhancements******
+
+AI-powered chatbot for automated support
+
+Email/SMS notifications for requests, payments, and notices
+
+Payment gateway integration
+
+Analytics dashboard for Admin with charts and graphs
+
+
+**Authors******
+
+**Ajinkya Repale - https://github.com/Ajinkya-Repale** 
+
+
+
+
