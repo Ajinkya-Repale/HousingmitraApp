@@ -1,13 +1,16 @@
-🏠 Housing Management System (HMS)
+#🏠 Housing Management System (HMS)
 
-**Overview**
+-----
+
+##**Overview**
 
 The Housing Management System (HMS) is a web-based application designed to streamline the management of housing societies or apartment complexes. It provides separate dashboards for Admins and Residents/Users, allowing efficient management of properties, requests, complaints, payments, and notices.
 
 The system enhances communication between residents and management while providing real-time tracking of housing activities.
 
-**Features
-Admin Features**
+##**Features**
+
+###**Admin Features**
 
 Secure Admin login and dashboard overview
 
@@ -28,7 +31,7 @@ Track Expenses and monthly statistics
 
 
 
-**User Features**
+##**User Features**
 
 Secure User login and personalized dashboard
 
