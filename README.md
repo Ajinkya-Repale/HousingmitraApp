@@ -68,6 +68,7 @@ Interactive chatbot for support and queries
 ****Project Structure
 ****
 
+```
 /src
    /com/MainApp/Entity
        Complaint.java
@@ -90,19 +91,21 @@ Interactive chatbot for support and queries
        scripts.js
 /WEB-INF
    web.xml
+```
 
-
+<br><br>
 
 **Future Enhancements******
 
-AI-powered chatbot for automated support
+-AI-powered chatbot for automated support
 
-Email/SMS notifications for requests, payments, and notices
+-Email/SMS notifications for requests, payments, and notices
 
-Payment gateway integration
+-Payment gateway integration
 
-Analytics dashboard for Admin with charts and graphs
+-Analytics dashboard for Admin with charts and graphs
 
+<br><br>
 
 **Authors******
 
