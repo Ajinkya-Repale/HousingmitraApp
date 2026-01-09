@@ -352,7 +352,7 @@ if (utoken != null) {
     <div class="card">
         <h4>🏡 My Properties</h4>
         <p>View or manage your properties and bookings.</p>
-        <a class="btn">Open</a>
+        <a href="property" class="btn">Open</a>
     </div>
     <div class="card">
         <h4>📢 Requests</h4>
