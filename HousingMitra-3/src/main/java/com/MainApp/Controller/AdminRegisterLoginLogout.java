@@ -26,7 +26,7 @@ public class AdminRegisterLoginLogout {
 	@Autowired
 	UserService uService;
 	
-	//  EXISTING METHODS 
+	//  EXISTING  
 	
 	@RequestMapping("/Signup")
 	public String showSignup() {
