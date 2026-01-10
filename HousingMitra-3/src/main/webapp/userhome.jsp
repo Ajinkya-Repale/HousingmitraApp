@@ -35,8 +35,15 @@ body {
     overflow-x: hidden;
 }
 
-body::-webkit-scrollbar { display: none; }
-html { scrollbar-width: none; }
+body::-webkit-scrollbar 
+{
+	display: none; 
+}
+
+html 
+{
+	scrollbar-width: none; 
+}
 
 /* ===== NAVBAR ===== */
 header {
@@ -54,7 +61,10 @@ header {
     flex-wrap: wrap;
 }
 
-header h2 { font-size: 22px; }
+header h2 
+{ 
+	font-size: 22px; 
+}
 
 nav {
     display: flex;
@@ -71,8 +81,10 @@ nav a {
     padding: 6px 0;
 }
 
-nav a.active,
-nav a:hover { color: #fff; }
+nav a.active, nav a:hover 
+{
+ color: #fff; 
+}
 
 nav a.active::after,
 nav a:hover::after {
@@ -276,42 +288,164 @@ footer {
 }
 
 /* ===== RESPONSIVE ===== */
-@media (max-width: 1200px) {
-    header { padding: 18px 30px; }
-    .hero { padding: 30px; }
-    .cards { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+@media (max-width: 1200px) 
+{
+
+header 
+{
+	padding: 18px 30px; 
+}
+    
+.hero 
+{
+	padding: 30px; 
+}
+ 
+.cards 
+{
+	 grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
 }
 
-@media (max-width: 900px) {
-    header { flex-direction: column; align-items: flex-start; gap: 10px; padding: 18px 20px; }
-    nav { gap: 15px; }
-    .hero h1 { font-size: 28px; }
-    .hero p { font-size: 15px; }
-    .stat h3 { font-size: 20px; }
-    .card { padding: 20px; }
 }
 
-@media (max-width: 600px) {
-    body { padding-top: 100px; }
-    header h2 { font-size: 20px; }
-    nav a { font-size: 14px; padding: 5px 0; }
-    .hero { padding: 20px; border-radius: 15px; }
-    .hero h1 { font-size: 24px; }
-    .hero p { font-size: 14px; }
-    .stats { grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 15px; }
-    .cards { grid-template-columns: 1fr; gap: 15px; }
-    .card h4 { font-size: 16px; }
-    .card p { font-size: 13px; }
-    .card .btn { padding: 8px 16px; font-size: 14px; }
-    .chatbot-popup { width: 90%; right: 5%; bottom: 90px; }
+@media (max-width: 900px) 
+{
+    
+header 
+{ 
+	flex-direction: column; 
+	align-items: flex-start; 
+	gap: 10px; 
+	padding: 18px 20px; 
 }
 
-@media (max-width: 400px) {
-    header h2 { font-size: 18px; }
-    nav a { font-size: 13px; }
-    .hero h1 { font-size: 22px; }
-    .hero p { font-size: 13px; }
-    .stat h3 { font-size: 18px; }
+nav 
+{
+	gap: 15px; 
+}
+
+.hero h1 
+{
+	font-size: 28px; 
+}
+
+.hero p 
+{ 
+	font-size: 15px; 
+}
+
+.stat h3 
+{
+	font-size: 20px; 
+}
+    
+.card 
+{
+	padding: 20px; 
+}
+
+}
+
+@media (max-width: 600px) 
+{
+    
+body 
+{
+	padding-top: 100px; 
+}
+
+header h2 
+{
+	 font-size: 20px; 
+}
+
+nav a 
+{
+	 font-size: 14px; 
+	 padding: 5px 0; 
+}
+
+.hero 
+{
+	padding: 20px; 
+	border-radius: 15px;
+}
+
+.hero h1 
+{
+	font-size: 24px; 
+}
+
+.hero p 
+{
+	font-size: 14px; 
+}
+
+.stats 
+{
+	grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+	gap: 15px; 
+}
+
+.cards 
+{
+	grid-template-columns: 1fr;
+	gap: 15px; 
+}
+
+.card h4 
+{
+	font-size: 16px; 
+}
+
+.card p 
+{
+	font-size: 13px; 
+}
+
+.card .btn 
+{
+	padding: 8px 16px; 
+	font-size: 14px; 
+}
+    
+.chatbot-popup 
+{
+	width: 90%; 
+	right: 5%; 
+	bottom: 90px;
+}
+
+}
+
+@media (max-width: 400px) 
+{
+    
+header h2 
+{
+	font-size: 18px; 
+}
+
+nav a 
+{
+	 font-size: 13px; 
+}
+
+.hero h1 
+{
+	font-size: 22px; 
+}
+    
+.hero p 
+{
+	font-size: 13px; 
+}
+
+.stat h3 
+{
+	font-size: 18px; 
+}
+
 }
 </style>
 </head>
@@ -341,13 +475,27 @@ if (utoken != null) {
     <p>Here’s a quick overview of your housing account.</p>
 </div>
 
+<!-- ===== DYNAMIC STATS ===== -->
 <div class="stats">
-    <div class="stat"><span>Properties Booked</span><h3>3</h3></div>
-    <div class="stat"><span>Pending Requests</span><h3>2</h3></div>
-    <div class="stat"><span>Payments Due</span><h3>₹12,000</h3></div>
-    <div class="stat"><span>Maintenance Tickets</span><h3>1</h3></div>
+    <div class="stat">
+        <span>Properties Booked</span>
+        <h3><%= request.getAttribute("propertiesCount") %></h3>
+    </div>
+    <div class="stat">
+        <span>Pending Requests</span>
+        <h3><%= request.getAttribute("pendingRequestsCount") %></h3>
+    </div>
+    <div class="stat">
+        <span>Complaints Raised</span>
+        <h3><%= request.getAttribute("complaintsCount") %></h3>
+    </div>
+    <div class="stat">
+        <span>Notices Received</span>
+        <h3><%= request.getAttribute("noticesCount") %></h3>
+    </div>
 </div>
 
+<!-- ===== ACTION CARDS ===== -->
 <div class="cards">
     <div class="card">
         <h4>🏡 My Properties</h4>
@@ -357,7 +505,7 @@ if (utoken != null) {
     <div class="card">
         <h4>📢 Requests</h4>
         <p>Submit or track maintenance and service requests.</p>
-         <a href="user-requests" class="btn">Open</a>
+        <a href="user-requests" class="btn">Open</a>
     </div>
     <div class="card">
         <h4>💳 Payments</h4>
@@ -367,12 +515,12 @@ if (utoken != null) {
     <div class="card">
         <h4>📄 Notices</h4>
         <p>View notices and updates from management.</p>
-         <a href="user-notice" class="btn">Open</a>
+        <a href="user-notice" class="btn">Open</a>
     </div>
     <div class="card">
         <h4>📄 Complaints</h4>
         <p>Add, edit, track and delete complaints.</p>
-         <a href="user-complaints" class="btn">Open</a>
+        <a href="user-complaints" class="btn">Open</a>
     </div>
 </div>
 
