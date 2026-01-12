@@ -69,7 +69,21 @@ public class AdminRegisterLoginLogout {
 	}
 	
 	@RequestMapping("/adminhome")
-	public String showAdminhome() {
+	public String showAdminhome(Model model, HttpSession session) 
+	{
+		String atoken = (String) session.getAttribute("atoken");
+		
+		if(atoken == null)
+		{
+			session.setAttribute( "msg" , "Login first to access");
+			return "redirect:/Login";
+		}
+		
+		model.addAttribute("totalUsers",aService.getTotalUsers());
+		model.addAttribute("pendingRequests",aService.getPendingRequests());
+		model.addAttribute("pendingComplaints",aService.getPendingComplaints());
+		model.addAttribute("noticeCount",aService.getTotalNotices());
+		 
 		return "adminhome";
 	}
 	

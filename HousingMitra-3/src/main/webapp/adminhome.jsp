@@ -279,10 +279,25 @@ if(atoken != null)
     </div>
 
     <div class="stats">
-        <div class="stat"><span>Total Users</span><h3>128</h3></div>
-        <div class="stat"><span>Properties</span><h3>45</h3></div>
-        <div class="stat"><span>Pending Requests</span><h3>12</h3></div>
-        <div class="stat"><span>Monthly Expense</span><h3>₹1.23L</h3></div>
+        <div class="stat">
+        	<span>Total Users</span>
+        	<h3><%=request.getAttribute("totalUsers") %></h3>
+        </div>
+        
+        <div class="stat">
+        	<span>Pending Request</span>
+        	<h3><%=request.getAttribute("pendingRequests") %></h3>
+        </div>
+        
+        <div class="stat">
+        	<span>Pending Complaints</span>
+        	<h3><%=request.getAttribute("pendingComplaints") %></h3>
+        </div>
+        
+        <div class="stat">
+        	<span>Monthly Expense</span>
+        	<h3><%=request.getAttribute("noticeCount") %></h3>
+        </div>
     </div>
 
     <div class="cards">
