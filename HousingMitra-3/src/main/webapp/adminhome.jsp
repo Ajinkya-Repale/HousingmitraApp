@@ -295,7 +295,7 @@ if(atoken != null)
         </div>
         
         <div class="stat">
-        	<span>Monthly Expense</span>
+        	<span>Published Notices</span>
         	<h3><%=request.getAttribute("noticeCount") %></h3>
         </div>
     </div>
