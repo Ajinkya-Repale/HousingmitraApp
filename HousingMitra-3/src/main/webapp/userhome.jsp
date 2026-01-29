@@ -447,6 +447,22 @@ nav a
 }
 
 }
+
+
+/* ===== TEMP HIGHLIGHT (NO SIZE CHANGE) ===== */
+.card.highlight,
+.hero.highlight{
+    box-shadow: 0 0 0 2px var(--accent);
+    animation: flash 1.6s ease-out;
+}
+
+@keyframes flash
+{
+    0% { box-shadow: 0 0 0 2px var(--accent); }
+    100% { box-shadow: 0 0 0 0 transparent; }
+}
+
+
 </style>
 </head>
 
@@ -460,17 +476,18 @@ if (utoken != null) {
 <header>
     <h2>🏠 Housing User</h2>
     <nav>
-        <a class="active">Home</a>
-        <a>My Properties</a>
-        <a>Requests</a>
-        <a>Payments</a>
+        <a class="active" href="javascript:void(0)" onclick="handleHome()">Home</a>
+        <a href="javascript:void(0)" onclick="handleProperty()">My Properties</a>
+        <a href="javascript:void(0)" onclick="handleRequest()">Requests</a>
+        <a href="javascript:void(0)" onClick="handleComplaints()">Complaints</a>
+        <a href="javascript:void(0)" onClick="handleNotice()">Notice</a>
         <a href="user-logout" class="logout">Logout</a>
     </nav>
 </header>
 
 <section class="section">
 
-<div class="hero">
+<div class="hero" id="homeSection">
     <h1>Welcome back, <%= utoken %> 👋</h1>
     <p>Here’s a quick overview of your housing account.</p>
 </div>
@@ -481,47 +498,57 @@ if (utoken != null) {
         <span>Properties Booked</span>
         <h3><%= request.getAttribute("propertiesCount") %></h3>
     </div>
+    
     <div class="stat">
         <span>Pending Requests</span>
         <h3><%= request.getAttribute("pendingRequestsCount") %></h3>
     </div>
+    
     <div class="stat">
         <span>Complaints Raised</span>
         <h3><%= request.getAttribute("complaintsCount") %></h3>
     </div>
+    
     <div class="stat">
         <span>Notices Received</span>
         <h3><%= request.getAttribute("noticesCount") %></h3>
     </div>
+    
 </div>
 
 <!-- ===== ACTION CARDS ===== -->
 <div class="cards">
-    <div class="card">
+
+    <div class="card" id="propertyCard">
         <h4>🏡 My Properties</h4>
         <p>View or manage your properties and bookings.</p>
         <a href="property" class="btn">Open</a>
     </div>
-    <div class="card">
+    
+    <div class="card" id="requestCard">
         <h4>📢 Requests</h4>
         <p>Submit or track maintenance and service requests.</p>
         <a href="user-requests" class="btn">Open</a>
     </div>
-    <div class="card">
+    
+    <div class="card" >
         <h4>💳 Payments</h4>
         <p>Check and pay your bills securely.</p>
         <a class="btn">Open</a>
     </div>
-    <div class="card">
+    
+    <div class="card" id="noticeCard">
         <h4>📄 Notices</h4>
         <p>View notices and updates from management.</p>
         <a href="user-notice" class="btn">Open</a>
     </div>
-    <div class="card">
+    
+    <div class="card" id="complaintCard">
         <h4>📄 Complaints</h4>
         <p>Add, edit, track and delete complaints.</p>
         <a href="user-complaints" class="btn">Open</a>
     </div>
+    
 </div>
 
 </section>
@@ -540,12 +567,15 @@ if (utoken != null) {
 </div>
 
 <script>
-function toggleChat() {
+
+function toggleChat() 
+{
     const chat = document.getElementById("chatbot");
     chat.style.display = chat.style.display === "flex" ? "none" : "flex";
 }
 
-function sendMessage() {
+function sendMessage() 
+{
     const input = document.getElementById("chatInput");
     const log = document.getElementById("chatLog");
     const msg = input.value.trim();
@@ -565,7 +595,8 @@ function sendMessage() {
     input.value = "";
 }
 
-function getBotReply(m) {
+function getBotReply(m) 
+{
     if (m.includes("complaint")) return "You can raise complaints from the Complaints section.";
     if (m.includes("payment")) return "Payments can be handled from the Payments section.";
     if (m.includes("request")) return "Maintenance requests are under Requests.";
@@ -574,9 +605,63 @@ function getBotReply(m) {
     return "I can help with complaints, payments, requests, notices, and properties.";
 }
 
-function clearChat() {
+function clearChat() 
+{
     document.getElementById("chatLog").innerHTML = "";
 }
+
+/* mobile */
+
+function isMobile()
+{
+    return window.innerWidth <= 768;
+}
+
+function highlightAndScroll(element)
+{
+    element.classList.add('highlight');
+
+    if(isMobile()){
+        element.scrollIntoView({
+            behavior: 'smooth',
+            block: 'center'
+        });
+    }
+
+    setTimeout(() => 
+    {
+        element.classList.remove('highlight');
+    }, 1600);
+}
+
+/* NAV HANDLERS */
+function handleHome()
+{
+    const hero = document.getElementById('homeSection');
+    highlightAndScroll(hero);
+    if(!isMobile()){
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+}
+
+function handleProperty(){
+    highlightAndScroll(document.getElementById('propertyCard'));
+}
+
+function handleRequest(){
+    highlightAndScroll(document.getElementById('requestCard'));
+}
+
+
+
+function handleNotice(){
+    highlightAndScroll(document.getElementById('noticeCard'));
+}
+
+function handleComplaints(){
+    highlightAndScroll(document.getElementById('complaintCard'));
+}
+
 </script>
 
 <%
