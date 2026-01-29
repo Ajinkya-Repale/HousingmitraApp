@@ -178,6 +178,24 @@ nav a.logout::after{
     margin-top:6px;
 }
 
+/* ===== TEMP HIGHLIGHT (NO SIZE CHANGE) ===== */
+.card.highlight,
+.hero.highlight{
+    box-shadow:0 0 0 2px var(--accent);
+    animation:flash 1.6s ease-out;
+}
+
+@keyframes flash{
+    0%
+    { 
+    	box-shadow:0 0 0 2px var(--accent); 
+    }
+    100%
+    { 
+    	box-shadow:0 0 0 0 transparent; 
+    }
+}
+
 /* ===== ACTION CARDS ===== */
 .cards{
     display:grid;
@@ -261,11 +279,11 @@ if(atoken != null)
     <h2>🏠 Housing Admin</h2>
 
     <nav id="nav">
-        <a class="active" href="#">Dashboard</a>
-        <a href="#">Users</a>
-        <a href="#">Properties</a>
-        <a href="#">Requests</a>
-        <a href="#">Expenses</a>
+        <a class="active" href="javascript:void(0)" onclick="handleDashboard()">Dashboard</a>
+        <a href="javascript:void(0)" onclick="handleUsers()">Users</a>
+        <a href="javascript:void(0)" onclick="handleNotice()">Notice</a>
+        <a href="javascript:void(0)" onclick="handleRequest()">Requests</a>
+        <a href="javascript:void(0)" onclick="handleComplaints()">Complaints</a>
         <a href="admin-logout" class="logout">Logout</a>
     </nav>
 
@@ -303,26 +321,26 @@ if(atoken != null)
     <div class="cards">
         
         
-        <div class="card">
+        <div class="card" id="noticeCard">
             <h4>📢 Manage Notice</h4>
             <p>Add, edit or remove notices</p>
             <a href="notice" class="btn">Open</a>
         </div>
 
-        <div class="card">
+        <div class="card" id="userCard">
             <h4>👥 Manage Users</h4>
             <p>View tenants, owners and role permissions.</p>
             <a href="manage-members" class="btn">Open</a>
 
         </div>
 
-        <div class="card">
+        <div class="card" id="requestCard">
             <h4>🛠 Requests</h4>
             <p>Approve or reject maintenance and booking requests.</p>
             <a href="request" class="btn">Open</a>
         </div>
         
-        <div class="card">
+        <div class="card" id="complaintCard">
             <h4>🛠 Complaints</h4>
             <p>Approve or reject maintenance and booking requests.</p>
             <a href="complaints" class="btn">Open</a>
@@ -337,6 +355,62 @@ if(atoken != null)
 <script>
 function toggleNav(){
     document.getElementById('nav').classList.toggle('show');
+}
+
+function isMobile(){
+    return window.innerWidth <= 768;
+}
+
+/* common highlight + mobile auto-scroll */
+function highlightAndScroll(element)
+{
+    element.classList.add('highlight');
+
+    if(isMobile())
+    {
+        element.scrollIntoView({
+            behavior:'smooth',
+            block:'center'
+        });
+        document.getElementById('nav').classList.remove('show');
+    }
+
+    setTimeout(() => 
+    {
+        element.classList.remove('highlight');
+    }, 1600);
+}
+
+/* NAV HANDLERS */
+function handleDashboard()
+{
+    const hero = document.querySelector('.hero');
+    highlightAndScroll(hero);
+
+    if(!isMobile())
+    {
+        window.scrollTo({ top:0, behavior:'smooth' });
+    }
+}
+
+function handleUsers()
+{
+    highlightAndScroll(document.getElementById('userCard'));
+}
+
+function handleNotice()
+{
+    highlightAndScroll(document.getElementById('noticeCard'));
+}
+
+function handleRequest()
+{
+    highlightAndScroll(document.getElementById('requestCard'));
+}
+
+function handleComplaints()
+{
+    highlightAndScroll(document.getElementById('complaintCard'));
 }
 
 
