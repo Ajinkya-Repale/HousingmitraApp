@@ -9,6 +9,7 @@
 <title>User Dashboard | Housing Management</title>
 
 <style>
+
 :root {
     --bg: #0b1e2e;
     --panel: #11283d;
@@ -58,7 +59,7 @@ header {
     padding: 18px 50px;
     background: rgba(17, 40, 61, 0.85);
     backdrop-filter: blur(10px);
-    flex-wrap: wrap;
+    
 }
 
 header h2 
@@ -462,6 +463,50 @@ nav a
     100% { box-shadow: 0 0 0 0 transparent; }
 }
 
+/*new add nav*/
+.hamburger{
+    display:none;
+    font-size:28px;
+    cursor:pointer;
+    margin-left:auto;
+}
+
+@media(max-width:768px){
+
+    .hamburger{
+        display:block;
+    }
+
+    nav#navMenu{
+        position:absolute;
+        top:70px;
+        right:20px;
+        display:none;
+        flex-direction:column;
+        gap:12px;
+        background:var(--panel);
+        padding:18px;
+        border-radius:16px;
+        width:auto;          /* ✅ prevents full width */
+        min-width:200px;     /* ✅ compact dropdown */
+        box-shadow:0 10px 30px rgba(0,0,0,.4);
+        z-index:1001;
+    }
+
+    nav#navMenu.show{
+        display:flex;
+    }
+
+    nav#navMenu a{
+        padding:8px 0;
+    }
+
+    nav#navMenu a.logout{
+        text-align:center;
+    }
+}
+
+
 
 </style>
 </head>
@@ -475,7 +520,10 @@ if (utoken != null) {
 
 <header>
     <h2>🏠 Housing User</h2>
-    <nav id="nav">
+    
+   
+    
+    <nav id="navMenu">
         <a class="active" href="javascript:void(0)" onclick="handleHome()">Home</a>
         <a href="javascript:void(0)" onclick="handleProperty()">My Properties</a>
         <a href="javascript:void(0)" onclick="handleRequest()">Requests</a>
@@ -484,7 +532,7 @@ if (utoken != null) {
         <a href="user-logout" class="logout">Logout</a>
     </nav>
     
-    
+     <div class="hamburger" onclick="toggleNav()">☰</div>
     
 </header>
 
@@ -658,6 +706,14 @@ function handleNotice(){
 function handleComplaints(){
     highlightAndScroll(document.getElementById('complaintCard'));
 }
+
+/*nav to toggle*/
+function toggleNav()
+{
+    document.getElementById("navMenu").classList.toggle("show");
+}
+
+
 
 </script>
 
