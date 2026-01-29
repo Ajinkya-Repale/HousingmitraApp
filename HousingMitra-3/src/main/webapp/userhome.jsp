@@ -475,7 +475,7 @@ if (utoken != null) {
 
 <header>
     <h2>🏠 Housing User</h2>
-    <nav>
+    <nav id="nav">
         <a class="active" href="javascript:void(0)" onclick="handleHome()">Home</a>
         <a href="javascript:void(0)" onclick="handleProperty()">My Properties</a>
         <a href="javascript:void(0)" onclick="handleRequest()">Requests</a>
@@ -483,6 +483,9 @@ if (utoken != null) {
         <a href="javascript:void(0)" onClick="handleNotice()">Notice</a>
         <a href="user-logout" class="logout">Logout</a>
     </nav>
+    
+    
+    
 </header>
 
 <section class="section">
@@ -530,13 +533,7 @@ if (utoken != null) {
         <p>Submit or track maintenance and service requests.</p>
         <a href="user-requests" class="btn">Open</a>
     </div>
-    
-    <div class="card" >
-        <h4>💳 Payments</h4>
-        <p>Check and pay your bills securely.</p>
-        <a class="btn">Open</a>
-    </div>
-    
+       
     <div class="card" id="noticeCard">
         <h4>📄 Notices</h4>
         <p>View notices and updates from management.</p>
