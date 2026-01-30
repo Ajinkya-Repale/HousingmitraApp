@@ -314,8 +314,8 @@ header
     
 header 
 { 
-	flex-direction: column; 
-	align-items: flex-start; 
+	flex-direction: row; 
+	align-items: center; 
 	gap: 10px; 
 	padding: 18px 20px; 
 }
@@ -508,6 +508,8 @@ nav a
 
 
 
+
+
 </style>
 </head>
 
@@ -518,23 +520,25 @@ String utoken = (String) session.getAttribute("utoken");
 if (utoken != null) {
 %>
 
-<header>
-    <h2>🏠 Housing User</h2>
-    
-   
-    
-    <nav id="navMenu">
-        <a class="active" href="javascript:void(0)" onclick="handleHome()">Home</a>
-        <a href="javascript:void(0)" onclick="handleProperty()">My Properties</a>
-        <a href="javascript:void(0)" onclick="handleRequest()">Requests</a>
-        <a href="javascript:void(0)" onClick="handleComplaints()">Complaints</a>
-        <a href="javascript:void(0)" onClick="handleNotice()">Notice</a>
-        <a href="user-logout" class="logout">Logout</a>
-    </nav>
-    
-     <div class="hamburger" onclick="toggleNav()">☰</div>
-    
+<header class="navbar">
+    <div class="nav-left">
+        <h2>🏠 Housing User</h2>
+    </div>
+
+    <div class="nav-right">
+        <nav id="navMenu">
+            <a class="active" href="javascript:void(0)" onclick="handleHome()">Home</a>
+            <a href="javascript:void(0)" onclick="handleProperty()">My Properties</a>
+            <a href="javascript:void(0)" onclick="handleRequest()">Requests</a>
+            <a href="javascript:void(0)" onclick="handleComplaints()">Complaints</a>
+            <a href="javascript:void(0)" onclick="handleNotice()">Notice</a>
+            <a href="user-logout" class="logout">Logout</a>
+        </nav>
+
+        <div class="hamburger" onclick="toggleNav()">☰</div>
+    </div>
 </header>
+
 
 <section class="section">
 
@@ -667,14 +671,16 @@ function highlightAndScroll(element)
     element.classList.add('highlight');
 
     if(isMobile()){
+        // ✅ CLOSE NAVBAR
+        document.getElementById("navMenu").classList.remove("show");
+
         element.scrollIntoView({
             behavior: 'smooth',
             block: 'center'
         });
     }
 
-    setTimeout(() => 
-    {
+    setTimeout(() => {
         element.classList.remove('highlight');
     }, 1600);
 }
